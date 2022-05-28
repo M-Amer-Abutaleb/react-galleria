@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import Photo from './Photo';
+import Navbar from './Navbar';
 
 const mainURL = 'https://api.unsplash.com/photos/';
 
@@ -37,6 +38,7 @@ function App() {
 
 	return (
 		<main>
+			<Navbar />
 			<section className='search'>
 				<form action='' className='search-form'>
 					<input type='text' placeholder='Search...' className='form-input' />
