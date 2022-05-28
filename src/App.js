@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 
-const mainURL = 'https://api.unsplash.com/photos/?client_id=';
-const KEY = '5pO-5HCDFlnCH-WxcPf_WX3S9YoWNlJmajqyT7zja4Q';
+const mainURL = 'https://api.unsplash.com/photos/';
+
 const searchURL = 'https://api.unsplash.com/search/photos/';
+
+const ClientID = `?client_id=${process.env.REACT_APP_ACCESS_KEY}`
 
 function App() {
   const [photos, setPhotos] = useState([]);
@@ -10,7 +12,7 @@ function App() {
 
 	const fetchImages = async () => {
 		let url;
-		url = mainURL + KEY;
+		url = mainURL + ClientID;
     try {
       setLoading(true);
 			const response = await fetch(url);
