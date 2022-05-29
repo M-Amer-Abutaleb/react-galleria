@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Navbar = () => {
-	useEffect(() => {
-		const event = window.addEventListener('scroll', () => {
+		window.addEventListener('scroll', () => {
 			if (window.scrollY > 1) {
 				document.querySelector('.navbar').style.opacity = 0.6;
 				document.querySelector('.navbar').style.background = '#fff';
@@ -15,10 +14,9 @@ const Navbar = () => {
 				document.querySelector('.nav-brand-span').style.fontSize = '2.75rem';
 			}
 		});
-		return () => {
-			window.removeEventListener('scroll', event);
-		};
-	}, []);
+	
+		
+
 
 	return (
 		<nav className='nav navbar container-fluid  px-3 d-flex justify-content-center '>
